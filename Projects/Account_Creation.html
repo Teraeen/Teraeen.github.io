@@ -129,7 +129,7 @@
         }
         function placeFirst(name1)
         {
-            if (name1 === null)
+            if (document.getElementById(name1).value === "")
             {
                 document.getElementById(name1).style.background="white";
             }
@@ -138,7 +138,7 @@
         }
         function placeLast(name2)
         {
-            if (name2 === null)
+            if (document.getElementById(name2).value === "")
             {
                 document.getElementById(name2).style.background="white";
             }
@@ -147,7 +147,7 @@
         }
         function placeAddress(street)
         {
-            if (street === null)
+            if (document.getElementById(street).value === "")
             {
                 document.getElementById(street).style.background="white";
             }
@@ -156,7 +156,7 @@
         }
         function placeCity(city)
         {
-            if (city === null)
+            if (document.getElementById(city).value === "")
             {
                 document.getElementById(city).style.background="white";
             }
@@ -165,7 +165,7 @@
         }
         function placeState(state)
         {
-            if (state === null)
+            if (document.getElementById(state).value === "")
             {
                 document.getElementById(state).style.background="white";
             }
@@ -174,7 +174,7 @@
         }
         function placeZip(zip)
         {
-            if (zip === null)
+            if (document.getElementById(zip).value === "")
             {
                 document.getElementById(zip).style.background="white";
             }
@@ -183,7 +183,7 @@
         }
         function placeEmail(email)
         {
-            if (email === null)
+            if (document.getElementById(email).value === "")
             {
                 document.getElementById(email).style.background="white";
             }
@@ -225,6 +225,22 @@
                 document.getElementById('phoneError_msg').innerHTML = phoneMsg;
                 document.getElementById(pNum).style.background="lightgreen";
             }
+        }
+        function killForm()
+        {
+            document.getElementById("passwrd").style.background="white";
+            document.getElementById("username").style.background="white";
+            document.getElementById("firstname").style.background="white";
+            document.getElementById("lastname").style.background="white";
+            document.getElementById("address").style.background="white";
+            document.getElementById("cityname").style.background="white";
+            document.getElementById("state").style.background="white";
+            document.getElementById("emailAddress").style.background="white";
+            document.getElementById("zipcode").style.background="white";
+            document.getElementById("phonenum").style.background="white";
+            document.getElementById('phoneError_msg').innerHTML = "";
+            document.getElementById('userError_msg').innerHTML = "";
+            document.getElementById('passError_msg').innerHTML = "";
         }
     </script>
 </head>
@@ -278,6 +294,6 @@
             <button input type ="button" onclick="checkPhone('phonenum')">submit</button></p>
         <p><span id="phoneError_msg"></span><br />
 
-            <input type = "submit" value = "Submit Form"/> <input type="reset"/>
+            <input type = "submit" value = "Submit Form"/> <input type="reset" onclick="killForm()"/>
     </td></tr></table></form></html>
 
