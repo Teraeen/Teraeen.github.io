@@ -1,0 +1,332 @@
+/*Style adds blackish color to background */
+body
+{
+    background-color: #1d1d1c;
+}
+
+/*Style to create a fluid image*/
+img
+{
+    max-width: 100%;
+}
+
+/*Styles for mobile layout*/
+
+/*Style for header center aligns content */
+header
+{
+    text-align: center;
+}
+
+/*Style for nav specifies text properties and margins */
+nav
+{
+    font-family: Verdana, "Times New Roman", serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: .5em;
+}
+/*Style specifies padding and margins for unordered list*/
+nav ul
+{
+    padding: 0;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+/*Style for lab li specifies background color, rounded corners, removes bullet style, and applies margins and padding for list items within the navigation*/
+nav li
+{
+    background-color: #7e7e7e;
+    border-radius: .01em;
+    list-style-type: none;
+    margin: .3em;
+    padding: .4em;
+}
+
+/*Style changes navigation link text color to white and removes the underline*/
+nav li a
+{
+    color: white;
+    text-shadow: .1em .1em .1em #e2be88;
+    text-decoration: none;
+}
+
+/*Style for main specifies a block display, text properties, margins, padding, rounded corners, and border properties*/
+#main
+{
+    display: block;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1em;
+    margin-top: .5em;
+    padding: 1em;
+    border-radius: 0 0 2em 2em;
+    background-color: #7e7e7e;
+    color: white;
+}
+
+#main h2, h3
+{
+    text-align: center;
+}
+
+/* Style for anchor elements within the main element */
+#main a
+{
+    color: #e2be88;
+    padding: .5em;
+}
+
+/* Style removes images from main element */
+#main img
+{
+    display: none;
+}
+
+#main h2
+{
+    text-shadow: .1em .1em .1em #323232
+}
+
+/*Style for footer specifies font size, text alignment, and top margin */
+footer
+{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Style for anchor elements within the footer and ADA*/
+footer a, #ADA a
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for ADA */
+#ADA
+{
+    text-align: center;
+}
+
+/* Style for ADA list items */
+#ADA li
+{
+    list-style-type: none;
+    display: inline;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 23%;
+}
+
+/* Style hides the desktop class */
+.desktop
+{
+    display: none;
+}
+
+/* Style rule for the Form element */
+form {
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+/* Style rule for paragraphs within form element */
+form label {
+    color: black;
+}
+
+.video
+{
+    display: none;
+}
+
+
+/* Tablet query */
+@media only screen and (min-width: 660px)
+{
+    /* Style specifies horizontal display for navigation links */
+    nav li
+    {
+        display: inline;
+        margin-left: 1%;
+        margin-right: 1%;
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 23%;
+        white-space: nowrap;
+        border-radius: .2em;
+    }
+
+    /* Style specifies top margin properties for the main element and clears the borders from the mobile view */
+    #main
+    {
+        margin-top: 1em;
+        border-radius: 0;
+        text-align: center;
+        text-wrap: normal;
+    }
+
+    /*Style displays images for main element and rounds their borders */
+    #main img
+    {
+        clear: left;
+        display: inline;
+        border-radius: .5em;
+        width: 30%;
+    }
+
+    /* Style for the table element */
+    table
+    {
+        border: .1em solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    /* Style specifies border and padding for the th and td elements */
+    th, td
+    {
+        border: .1em solid black;
+        padding: 1em;
+    }
+
+    /* Style for th element */
+    th
+    {
+        background-color: #1d1d1c;
+        color: white;
+    }
+
+    td
+    {
+        color: black;
+    }
+
+    /* Style for the caption element */
+    caption
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        caption-side: top;
+    }
+
+    /* Style rule for the video class */
+    .video {
+        text-align: center;
+        display: inline;
+    }
+
+    /* Style rule for video element */
+    video {
+        border: .5em ridge white;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/* Desktop query */
+@media only screen and (min-width: 830px)
+{
+    /* Style specifies border radius, and margins for the main element */
+    #main
+    {
+        border-radius: .5em;
+        margin-right: 4em;
+        margin-left: 4em;
+    }
+
+    /* Style specifies left and right margin for paragraphs within main */
+    #main p
+    {
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    /* Style rounds header image */
+    header img
+    {
+        border-radius: 2em;
+    }
+
+    /* Style specifies margin and padding for the unordered list within the nav bar */
+    nav ul
+    {
+        margin-right: 1%;
+        margin-left: 1%;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Style for navigation list items specifies a border radius, border margin, width, and padding */
+    nav li
+    {
+        display: inline;
+        margin: auto;
+        padding: auto;
+        width: 100%;
+        white-space: nowrap;
+        border-radius: .5em;
+        background-color: #7e7e7e;
+    }
+
+    /* Style for navigation links specifies display and padding */
+    nav li a
+    {
+        color: white;
+        text-shadow: .1em .1em .1em #e2be88;
+        text-decoration: none;
+    }
+
+    /*Pseudo-class styles */
+
+    #main a:hover
+    {
+        color: #cfaa73;
+    }
+
+    nav li a:visited
+    {
+        color: #323232;
+    }
+
+    nav li a:hover
+    {
+        color: #e2be88;
+        font-weight: bolder;
+    }
+
+    footer a:hover
+    {
+        color: #e2be88;
+    }
+
+    /*Style displays the desktop class */
+    .desktop
+    {
+        display: inline;
+    }
+
+    /* Style for the caption element */
+    caption
+    {
+        color: white;
+    }
+
+    /* Style for table element */
+    table
+    {
+        background-color: white;
+        width: 40%;
+    }
+}

@@ -1,0 +1,248 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <title>Hunter Green - Account Creation</title>
+    <script>
+        function checkPassword(pword)
+        {
+            var userWord = ""; var msg ="";
+            var checkLength = false; var checkUpper = false; var checkDigit = false; var checkSpecial = false; var checkLower = false;
+            userWord = document.getElementById(pword).value; /* Gets the text stored in the password textbox */
+            //check length of word
+            while (checkLength === false) /* Input validation loop that checks to make sure password is the correct length */
+            {
+                if ((userWord.length < 4) || (userWord.length > 12))
+                {
+                    msg = "The password must be between 4 and 12 characters. Try again";
+                    document.getElementById('passError_msg').innerHTML = msg;
+                    userWord = document.getElementById(passwrd).value;
+                }
+                else
+                    checkLength = true;
+            }
+            //check for uppercase
+            var wordLength = userWord.length;
+            for (i = 0; i <= (wordLength); i++)
+            {
+                if ((userWord.charCodeAt(i) >= 65) && (userWord.charCodeAt(i) <= 90))
+                {
+                    checkUpper = true;
+                    break;
+                }
+            }
+            if (checkUpper === false)
+            {
+                msg = "You must have at least one uppercase letter in the password. Try again";
+                document.getElementById('passError_msg').innerHTML = msg;
+                userWord = document.getElementById(passwrd).value;
+            }
+            //check for lowercase
+            for (i = 1; i <= (wordLength); i++)
+            {
+                if ((userWord.charCodeAt(i) >= 97) && (userWord.charCodeAt(i) <= 122))
+                {
+                    checkLower = true;
+                    break;
+                }
+            }
+            if (checkLower === false)
+            {
+                msg = "You must have at least one lowercase letter in the password. Try again";
+                document.getElementById('passError_msg').innerHTML = msg;
+                userWord = document.getElementById(passwrd).value;
+            }
+            //check for digit
+            for (i = 1; i <= (wordLength); i++)
+            {
+                if ((userWord.charCodeAt(i) > 47) && (userWord.charCodeAt(i) < 58))
+                {
+                    checkDigit = true;
+                    break;
+                }
+            }
+            if (checkDigit === false)
+            {
+                msg = "You must have at least one number in the password. Try again";
+                document.getElementById('passError_msg').innerHTML = msg;
+                userWord = document.getElementById(passwrd).value;
+            }
+            //check for special character
+            for (i = 1; i <= (wordLength); i++)
+            {
+                if ((userWord.charCodeAt(i) === 35) || (userWord.charCodeAt(i) === 36) || (userWord.charCodeAt(i) === 37 || userWord.charCodeAt(i) === 94))
+                {
+                    checkSpecial = true;
+                    break;
+                }
+            }
+            if (checkSpecial === false)
+            {
+                msg = "You must have one special character ($, %, or #) in the password. Try again";
+                document.getElementById('passError_msg').innerHTML = msg;
+                userWord = document.getElementById(passwrd).value;
+            }
+            if ((checkLength === true) && (checkUpper === true) && (checkDigit === true) && (checkSpecial === true) && (checkLower === true))
+            {
+                msg = "Congratulations! You have successfully entered a valid password.";
+                document.getElementById('passError_msg').innerHTML = msg;
+                document.getElementById(pword).style.background="lightgreen";
+            }
+        }
+        function checkUsername (useName)
+        {
+            var usernameWord = ""; var userMsg ="";
+            var checkUserLength = false;
+            usernameWord = document.getElementById(useName).value;
+            //check length of username
+            while (checkUserLength === false) /* Input validation loop that checks to make sure username is the correct length */
+            {
+                if ((usernameWord.length < 4) || (usernameWord.length > 20))
+                {
+                    userMsg = "The username must be between 4 and 20 characters. Try again";
+                    document.getElementById('userError_msg').innerHTML = userMsg;
+                    usernameWord = document.getElementById(username).value;
+                }
+                else
+                {
+                    checkUserLength = true;
+                }
+                if (checkUserLength === true)
+                {
+                    userMsg = "Congratulations, you have entered a valid username.";
+                    document.getElementById('userError_msg').innerHTML = userMsg;
+                    document.getElementById(useName).style.background="lightgreen";
+                }
+            }
+        }
+        function placeFirst(name1)
+        {
+            document.getElementById(name1).style.background="lightgreen";
+        }
+        function placeLast(name2)
+        {
+            document.getElementById(name2).style.background="lightgreen";
+        }
+        function placeAddress(street)
+        {
+            document.getElementById(street).style.background="lightgreen";
+        }
+        function placeCity(city)
+        {
+            document.getElementById(city).style.background="lightgreen";
+        }
+        function placeState(state)
+        {
+            document.getElementById(state).style.background="lightgreen";
+        }
+        function placeZip(zip)
+        {
+            document.getElementById(zip).style.background="lightgreen";
+        }
+        function placeEmail(email)
+        {
+            document.getElementById(email).style.background="lightgreen";
+        }
+        function checkPhone(pNum)
+        {
+            var checkCount = 0;
+            var checkFormat = false;
+            var phoneNum = document.getElementById(pNum).value;
+            var phoneLength = phoneNum.length;
+            for (i = 0; i <= (phoneLength); i++)
+            {
+                if (phoneNum.charCodeAt(i) >= 48 && phoneNum.charCodeAt(i) <= 57 )
+                {
+                    checkCount = checkCount + 1
+                }
+            }
+            if (checkCount < 10)
+            {
+                phoneMsg = "The phone number does not have enough digits. Try again";
+                document.getElementById('phoneError_msg').innerHTML = phoneMsg;
+                phoneNum = document.getElementById(phonenum).value;
+            }
+            if (phoneNum.charCodeAt(0) === 40 && phoneNum.charCodeAt(4) === 41 && phoneNum.charCodeAt(8) === 45)
+            {
+                checkFormat = true;
+            }
+            else
+            {
+                phoneMsg = "The phone number is not in the correct format. Try again";
+                document.getElementById('phoneError_msg').innerHTML = phoneMsg;
+                phoneNum = document.getElementById(phonenum).value;
+            }
+            if (checkCount === 10 && checkFormat === true)
+            {
+                phoneMsg = "Congratulations, you have entered a valid phone number.";
+                document.getElementById('phoneError_msg').innerHTML = phoneMsg;
+                document.getElementById(pNum).style.background="lightgreen";
+            }
+        }
+    </script>
+</head>
+<form name = "business_form" action = "mailto:business@mail.com" method ="post" enctype="text/plain">
+    <table width = 60% align = "center"><tr><td><br />
+        <h1>Create a username and password</h1>
+        <p>Enter a username in the box below. Your username must contain between 4 and 20 characters</p>
+        <p><input type="text" name="user_username" id="username" size = "" />
+            <button input type ="button" onclick="checkUsername('username')" >submit</button></p>
+        <p> Enter a password in the box below. Your password must:</p>
+        <ul><li>contain between 4 and 12 characters</li>
+            <li>contain at least one uppercase AND one lowercase letter</li>
+            <li>contain at least one digit (0 - 9)</li>
+            <li>contain one of the following special characters: dollar sign ($), percent sign (%), a caret (^), or pound sign (#)</li></ul>
+        <p><input type="password" name="user_pwrd" id="passwrd" size = "" />
+            <button input type ="button" onclick="checkPassword('passwrd')" >submit</button></p>
+        <p><span id ="userError_msg"></span></p>
+        <p><span id="passError_msg"></span><br />
+        <h2>Enter your personal information</h2>
+        <p>First Name</p>
+        <p><input type="text" name="first_name" id="firstname" size = "" />
+            <button input type ="button" onclick="placeFirst('firstname')">submit</button></p>
+        <p>Last Name</p>
+        <p><input type="text" name="last_name" id="lastname" size = "" />
+            <button input type ="button" onclick="placeLast('lastname')">submit</button></p>
+        <p>State</p>
+        <p><select id="state">
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Alabama">Alabama</option>
+            <option value="Texas">Texas</option>
+        </select>
+            <button input type ="button" onclick="placeState('state')">submit</button></p>
+        <p>City</p>
+        <p><input type="text" name="city_name" id="cityname" size = "" />
+            <button input type ="button" onclick="placeCity('cityname')">submit</button></p>
+        <p>Zip Code</p>
+        <p><input type="text" name="zip_code" id="zipcode" size = "" />
+            <button input type ="button" onclick="placeZip('zipcode')">submit</button></p>
+        <p>Street Address</p>
+        <p><input type="text" name="street_address" id="address" size = "" />
+            <button input type ="button" onclick="placeAddress('address')">submit</button></p>
+        <p>E-Mail Address</p>
+        <p><input type="text" name="email_address" id="emailAddress" size = "" />
+            <button input type ="button" onclick="placeEmail('emailAddress')">submit</button>  Would you like to be contacted by us via e-mail?
+            <input type = "radio" name = "choice" value = "yes"/> Yes <input type = "radio" name = "choice" value = "no"/> No </p>
+        <h2>Enter a valid phone number</h2>
+        <p>Enter your phone number in the box below</p>
+        <ul><li>please ensure your phone number is in the format: (xxx)xxx-xxxx</li></ul>
+        <p><input type="text" name="phone_number" id="phonenum" size = "" />
+            <button input type ="button" onclick="checkPhone('phonenum')">submit</button></p>
+        <p><span id="phoneError_msg"></span><br />
+
+            <input type = "submit" value = "Submit Form"/> <input type="reset"/>
+    </td></tr></table></form></html>
+
