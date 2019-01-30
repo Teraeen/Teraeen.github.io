@@ -1,4 +1,3 @@
-# Teraeen.github.io
-Portfolio for my current projects on display.
+# Welcome to my GitHub Portfolio site Repository
 
 Visit the Portfolio site at http://teraeen.github.io
