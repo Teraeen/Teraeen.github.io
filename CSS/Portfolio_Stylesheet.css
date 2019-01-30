@@ -5,12 +5,6 @@ body {
     background-color: #f9f9f9;
 }
 
-
-/* Adds a shadow to the title jumbotron */
-#title {
-    box-shadow: 0 0 2em .2em #7e7e7e;
-}
-
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
@@ -22,7 +16,6 @@ body {
 footer {
     background-color: #f2f2f2;
     padding: 25px;
-    box-shadow: 0 0 2em .2em #7e7e7e;
 }
 
 /* Adds a small shadow to the thumbnails */
